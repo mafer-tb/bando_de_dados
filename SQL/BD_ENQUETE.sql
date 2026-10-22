@@ -86,6 +86,7 @@ GRANT UPDATE ON BD_ENQUETE.RESPOSTAS TO 'mariafernanda'@'localhost';
 REVOKE UPDATE ON BD_ENQUETE.RESPOSTAS FROM 'mariafernanda'@'localhost';
 
 -- 5 INSERTS EM CADA TABELA 
+
 INSERT INTO USUARIOS(USU_DATA_CADASTRO, USU_LOGIN, USU_DATANASC, USU_ESTADO_CIVIL,
 USU_ESTADO,USU_ESCOLARIDADE, USU_EMAIL, USU_SENHA ,USU_NOME)
 VALUES	(NOW(), 'laura.ob', '2009/10/09', 'solteiro', 'SP', 'Fundamental Completo', 'laura@gmail', '12345', 'laura'),
@@ -93,7 +94,6 @@ VALUES	(NOW(), 'laura.ob', '2009/10/09', 'solteiro', 'SP', 'Fundamental Completo
         (NOW(), 'analara.ad', '2009/03/31', 'solteiro', 'SP', 'Fundamental Completo', 'analara@gmail', 'lara45', 'ana lara'),
         (NOW(), 'carol.atb', '2000/11/10', 'casado', 'SP',  'Médio Completo', 'carol@gmail', '1611', 'Caroline'),
 		(NOW(), 'rafael.bisc', '2000/08/06', 'casado', 'SP',  'Médio Completo', 'rafael@gmail', '290405', 'rafael');
-        
 SELECT * FROM USUARIOS;
 
 INSERT INTO ENQUETE(ENQ_DATA_FINAL, ENQ_DATA_INICIAL,ENQ_DESCRICAO,ENQ_NOME)
@@ -102,7 +102,6 @@ VALUES	('2026/10/16',NOW(), 'ENQUETE', 'ENQUETE_LAURA'),
         ('2026/10/16',NOW(), 'ENQUETE', 'ENQUETE_ANALARA'),
         ('2026/10/16',NOW(), 'ENQUETE', 'ENQUETE_CAROL'),
         ('2026/10/16',NOW(), 'ENQUETE', 'ENQUETE_RAFAEL');
-        
 SELECT * FROM ENQUETE;
 
 INSERT INTO PERGUNTAS(PER_DESCRICAO,FK_ENQ_CODIGO)
@@ -111,7 +110,6 @@ VALUES	('descrição 1', 1),
         ('descrição 3', 2),
         ('descrição 4', 3),
         ('descrição 5', 5);
-        
 SELECT * FROM PERGUNTAS;
 
 INSERT INTO RESPOSTAS(RES_DESCRICAO,RES_CERTA,FK_PER_CODIGO)
@@ -120,7 +118,6 @@ VALUES	('RESPOSTA_DESCRIÇÃO 1', 'R', 6),
         ('RESPOSTA_DESCRIÇÃO 3', 'R', 8),
         ('RESPOSTA_DESCRIÇÃO 4', 'R', 9),
         ('RESPOSTA_DESCRIÇÃO 5', 'R', 10);
-        
 SELECT * FROM RESPOSTAS;
 
 INSERT INTO USUARIO_RESPONDE_ENQUETE(URE_DATA,FK_USU_CODIGO,FK_ENQ_CODIGO)
@@ -128,4 +125,5 @@ VALUES	(NOW(), 1, 2),
 		(NOW(), 2, 3),
 		(NOW(), 3, 4),
 		(NOW(), 4, 5),
-		(NOW(), 5, 1),
+		(NOW(), 5, 1);
+SELECT * FROM USUARIO_RESPONDE_ENQUETE;
